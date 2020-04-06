@@ -1,0 +1,28 @@
+// Setup
+@import "setup/variables.scss";
+@import "setup/functions.scss";
+@import "setup/mixins.scss";
+
+// Basics
+@import "basics/helpers.scss";
+@import "basics/layout.scss";
+@import "basics/base.scss";
+@import "basics/links.scss";
+@import "basics/buttons.scss";
+@import "basics/typography.scss";
+@import "basics/icons.scss";
+
+
+// Components
+@import "components/navbar.scss";
+@import "components/header.scss";
+@import "components/about.scss";
+@import "components/skills.scss";
+@import "components/service.scss";
+@import "components/portfolio.scss";
+@import "components/passage.scss"
+
+//View
+
+
+
