@@ -1,6 +1,15 @@
 .skills {
-  margin-top: 120px;
- // border:1px solid orange;
+  padding-top: 120px;
+ // height: 100vh;
+  //border:1px solid orange;
+  // @include for-wide-layout {
+  //   height: 90vh;
+  // }
+  @include for-narrow-layout {
+    //padding-top: 0;
+    height: auto;
+    width: 100%;
+  }
 }
 
 .skill-list {

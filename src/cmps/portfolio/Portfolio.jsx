@@ -67,18 +67,19 @@ export default class Portfolio extends Component {
 
         ]
     }
-    handleEnter = (link) => {
-        console.log('portfolio page')
-        eventBusService.emit('scrolling', link);
+    handleEnter = (link,isEnter) => {
+        let data={link,isEnter}
+        eventBusService.emit('scrolling', data);
     }
     render() {
         return (
             <Waypoint
+            fireOnRapidScroll={false}
                 scrollableAncestor={window}
                 bottomOffset='150px'
                 topOffset='250px'
-                onLeave={this.handleEnter.bind(null, 'service')}
-                onEnter={this.handleEnter.bind(null, 'portfolio')}>
+                onLeave={this.handleEnter.bind(null, 'service',false)}
+                onEnter={this.handleEnter.bind(null, 'portfolio',true)}>
                 <section id="portfolio" className="portfolio container flex column align-center">
                     <h2 className="titles">my recent works</h2>
                     <img className="underline" src={span} alt={span} width="60" />

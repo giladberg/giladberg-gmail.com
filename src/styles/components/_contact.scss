@@ -1,3 +1,61 @@
-.contact{
-    
+.contact {
+    // border:1px solid black;
+    padding-top: 121px;
+
+    form {
+        // border:1px solid red;
+        margin-top: 106px;
+        width: 100%;
+        display: grid;
+        grid-column-gap: 31px;
+        grid-row-gap: 65px;
+        grid-template-areas:
+            "name email"
+            "msg msg ";
+        @include for-mobile-layout {
+            grid-template-areas:
+                "name name"
+               "email email"
+                "msg msg ";
+               
+        }
+        & > *,
+        ::placeholder {
+            color: $clr1;
+            width: 100%;
+            border: none;
+            outline: none;
+            // border-bottom: 1px solid #000000;
+            padding-bottom: 10px;
+            padding-left: 9px;
+        }
+        .name {
+            grid-area: name;
+            border-bottom: 1px solid #000000;
+        }
+        .email {
+            grid-area: email;
+            border-bottom: 1px solid #000000;
+        }
+        .msg {
+            grid-area: msg;
+            border-bottom: 1px solid #000000;
+            overflow-x: hidden;
+            @include for-mobile-layout {
+               height: 127px;
+                   
+            }
+        }
+    }
+    button {
+        margin-top: 41px;
+        box-shadow: -1px 14px 24px rgba(0, 0, 0, 0.18);
+        border: 1px solid $clr1;
+        padding-left: 46px;
+        padding-right: 46px;
+        background-color: $clr6;
+        .paper {
+            margin-left: 8px;
+        }
+    }
 }

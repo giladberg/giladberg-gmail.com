@@ -1,5 +1,10 @@
 .portfolio {
-  margin-top: 120px;
+  padding-top: 120px;
+ // min-height: 100vh;
+ // border:1px solid blue;
+  @include for-wide-layout {
+   // min-height: 90vh;
+  }
 }
 
 .portfolio-list {

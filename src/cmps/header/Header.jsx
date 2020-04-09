@@ -13,7 +13,7 @@ export default class Header extends Component {
             <Waypoint scrollableAncestor={window}  onEnter={this.handleEnter}>
                 <header id="home" className="header flex container ">
                     <div className="square-narrow"></div>
-                    <section className="first  flex column">
+                    <div className="first  flex column">
                         <Navbar />
                         <div className="box">
                             <div className="square"></div>
@@ -24,10 +24,10 @@ export default class Header extends Component {
                                 <button className="explore-more">explore more</button>
                             </div>
                         </div>
-                    </section>
-                    <section className="second ">
+                    </div>
+                    <div className="second ">
                         {/* <div className="blend-mode"></div> */}
-                    </section>
+                    </div>
                 </header>
             </Waypoint>
         )

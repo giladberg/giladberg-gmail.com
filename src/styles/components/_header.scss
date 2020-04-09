@@ -1,6 +1,6 @@
 .header {
   height: 100vh;
-  //border:1px solid red;
+  //border:4px solid red;
   @include for-narrow-layout { 
     height: 80vh;
   }
@@ -9,7 +9,7 @@
     @include for-narrow-layout {
       display: block;
       position: absolute;
-      bottom: 50px;
+      bottom: 218px;
       left: -80px;
       width: 241px;
       height: 191px;

@@ -2,28 +2,36 @@ import React, { Component } from 'react'
 import NavList from './NavList'
 
 export default class Navbar extends Component {
-    state={openMenu:'',scrolling:''}
+    state = { openMenu: '', scrolling: '', scrollingMode: true }
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll, { passive: true })
-      }
-    
-      componentWillUnmount() {
+    }
+
+    componentWillUnmount() {
         window.removeEventListener('scroll', this.handleScroll)
-      }
-    
-      handleScroll=(event)=> {
-         if(window.pageYOffset===0)this.setState({scrolling:''})
-         else if(!this.state.scrolling)  this.setState({scrolling:'scrolling'})
-      }
-    openMenu=()=>{
-        let openMenu=this.state.openMenu?'':'openMenu'
-        this.setState({openMenu})
+    }
+    changeScrollingMode = (status) => {
+        this.setState({ scrollingMode: status })
+    }
+
+    handleScroll = (event) => {
+        if (window.pageYOffset === 0) this.setState({ scrolling: '' })
+        else if (!this.state.scrolling) this.setState({ scrolling: 'scrolling' })
+       
+    }
+    openMenu = () => {
+        let openMenu = this.state.openMenu ? '' : 'openMenu'
+        this.setState({ openMenu })
     }
     render() {
         return (
             <nav className={`main-navbar flex ${this.state.scrolling}`}>
-                <div onClick={this.openMenu} className={this.state.openMenu?'screen':''}></div>
-                <NavList openMenu={this.state.openMenu} closeMenue={this.openMenu} />
+                <div onClick={this.openMenu} className={this.state.openMenu ? 'screen' : ''}></div>
+                <NavList
+                    changeScrollingMode={this.changeScrollingMode}
+                    scrollingMode={this.state.scrollingMode}
+                    openMenu={this.state.openMenu}
+                    closeMenue={this.openMenu} />
                 <div className="humburger-bar icon-menu" onClick={this.openMenu}></div>
             </nav>
         )

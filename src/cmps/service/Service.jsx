@@ -21,20 +21,21 @@ export default class Service extends Component {
             }
         ]
     }
-    handleEnter = (link) => {
-        console.log('service page')
-        eventBusService.emit('scrolling', link);
+    handleEnter = (link,isEnter) => {
+        let data={link,isEnter}
+        eventBusService.emit('scrolling', data);
     }
     render() {
         return (
             <Waypoint
+            fireOnRapidScroll={false}
                 scrollableAncestor={window}
                 bottomOffset='150px'
                 topOffset='250px'
-                onLeave={this.handleEnter.bind(null, 'skills')}
-                onEnter={this.handleEnter.bind(null, 'service')}>
-                <section className="service flex align-center">
-                    <div id="service" className="wrapper  flex column align-center container">
+                onLeave={this.handleEnter.bind(null, 'skills',false)}
+                onEnter={this.handleEnter.bind(null, 'service',true)}>
+                <section  id="service" className="service flex align-center">
+                    <div className="wrapper  flex column align-center container">
                         <h2 className="titles">what i do</h2>
                         <img className="underline" src={span} alt={span} width="60" />
                         <ServiceList services={this.state.services} />
