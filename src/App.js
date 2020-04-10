@@ -8,6 +8,7 @@ import Service from './cmps/service/Service'
 import Portfolio from './cmps/portfolio/Portfolio'
 import Passage from './cmps/Passage'
 import Contact from './cmps/Contact'
+import Footer from './cmps/footer/Footer'
 function App() {
   return (
     <div  >
@@ -18,6 +19,7 @@ function App() {
       <Portfolio/>
       <Passage/>
       <Contact/>
+      <Footer/>
     </div>
   );
 }

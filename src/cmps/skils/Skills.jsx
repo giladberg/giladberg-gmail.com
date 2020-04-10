@@ -6,9 +6,8 @@ import span from '../../imgs/span.png'
 import SkillList from './SkillList'
 export default class Skills extends Component {
 
-    handleEnter = (link,isEnter) => {
-        let data={link,isEnter}
-        eventBusService.emit('scrolling' , data);
+    handleEnter = (link) => {
+        eventBusService.emit('scrolling' , link);
     }
     state = {
         skills: [{ skill: 'html', precent: 85 },
@@ -27,10 +26,9 @@ export default class Skills extends Component {
             <Waypoint 
             fireOnRapidScroll={false}
             scrollableAncestor={window}
-            bottomOffset='150px'
-            topOffset='50%'
-            onLeave={this.handleEnter.bind(null,'about',false)}
-            onEnter={this.handleEnter.bind(null,'skills',true)}>
+            bottomOffset='80%'
+            topOffset='25%'
+            onEnter={this.handleEnter.bind(null,'skills')}>
                 <section id="skills"  className="skills">
                     <div  className=" flex column align-center container">
                     <h2 className="titles">Skills</h2>

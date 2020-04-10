@@ -28,8 +28,6 @@ export default class Navbar extends Component {
             <nav className={`main-navbar flex ${this.state.scrolling}`}>
                 <div onClick={this.openMenu} className={this.state.openMenu ? 'screen' : ''}></div>
                 <NavList
-                    changeScrollingMode={this.changeScrollingMode}
-                    scrollingMode={this.state.scrollingMode}
                     openMenu={this.state.openMenu}
                     closeMenue={this.openMenu} />
                 <div className="humburger-bar icon-menu" onClick={this.openMenu}></div>
