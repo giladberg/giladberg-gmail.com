@@ -16,7 +16,7 @@ export default class Service extends Component {
             },
             {
                 title: 'Back-end',
-                info: "Utilising node.js frameworks such as Express, I've written services including REST APIs with connecting with data base such as mongodb, mysql..",
+                info: "Utilising node.js frameworks such as Express, I've written services including REST APIs with connecting to data base such as mongodb, mysql. also working with socket.io and with new technologies of the server side.",
                 img: backend
             }
         ]
@@ -32,12 +32,15 @@ export default class Service extends Component {
                 bottomOffset='90%'
                 topOffset='25%'
                 onEnter={this.handleEnter.bind(null, 'service')}>
-                <section id="service" className="service flex align-center">
-                    <div className="wrapper  flex column align-center container">
+                <section id="service" className="service flex align-center ">
+                    <div className="container">
+                    <div className="wrapper  flex column align-center ">
                         <h2 className="titles">what i do</h2>
                         <img className="underline" src={span} alt={span} width="60" />
                         <ServiceList services={this.state.services} />
                     </div>
+                    </div>
+                   
                 </section>
             </Waypoint>
         )

@@ -5,4 +5,13 @@ button {
   font-weight: 500;
   line-height: 32px;
   text-transform: uppercase;
+  transition: all .2s;
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12);
+    animation: buttonEffect 0.3s ;
+   
+  }
 }
+
+

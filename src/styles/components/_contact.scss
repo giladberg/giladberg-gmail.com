@@ -1,9 +1,7 @@
 .contact {
-    // border:1px solid black;
     padding-top: 121px;
 
     form {
-        // border:1px solid red;
         margin-top: 106px;
         width: 100%;
         display: grid;
@@ -25,7 +23,6 @@
             width: 100%;
             border: none;
             outline: none;
-            // border-bottom: 1px solid #000000;
             padding-bottom: 10px;
             padding-left: 9px;
         }
@@ -56,6 +53,13 @@
         background-color: $clr6;
         .paper {
             margin-left: 8px;
+        }
+
+        &:hover{
+            .paper{
+             
+                animation: planeEffect 1.3s ;
+            }
         }
     }
 }

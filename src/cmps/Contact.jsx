@@ -19,9 +19,24 @@ export default class Contact extends Component {
         this.setState({ contact })
     }
     onSendEmail = async () => {
-        const isSentEmail = await emailService.sendEmail(this.state.contact)
-        console.log(isSentEmail)
+        if(!this.isValidateEmail(this.state.contact.email)) eventBusService.emit('modal', {type:'danger',txt:'Email is not valid!'});
+        else if(!this.state.contact.name)eventBusService.emit('modal', {type:'danger',txt:'Please write your name!'});
+        else if(!this.state.contact.msg)eventBusService.emit('modal', {type:'danger',txt:'Please write your message!'});
+        else{
+            const isSentEmail = await emailService.sendEmail(this.state.contact)
+            if(isSentEmail){
+                eventBusService.emit('modal', {type:'success',txt:'Email sent successfully!'});
+                let contact={name: '', email: '', msg: '' }
+                this.setState({contact})
+            }
+            else eventBusService.emit('modal', {type:'danger',txt:'We have problem to send you email, please try again!'});
+            
+        }
     }
+    isValidateEmail = (email) => {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    } 
     render() {
 
         return (

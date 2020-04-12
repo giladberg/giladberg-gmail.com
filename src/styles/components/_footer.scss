@@ -19,14 +19,16 @@
         border:1px solid $clr6;
         width: 36px;
         height: 36px;
+        &:hover{
+            transition: .6s all;
+            background-color: $clr6;
+            &>*{
+              color: $clr1;
+            }
+        }
+
     }
-    h3{
-        margin-right: 135px;
-        @include for-mobile-layout {
-            margin-right: 0;
-            order:2;
-          }
-    }
+    
 }
 
 .iconList{
@@ -36,8 +38,22 @@
 }
 
 .iconPreview{
-    
     margin-right: 11px;
-  
+    transition: .6s all;
+  &:hover{
+      background-color: $clr6;
+      .icon-codewars{
+        color: #ad2c27;
+      }
+      .icon-facebook{
+          color:#4267B2;
+      }
+      .icon-linkedin2{
+          color:#2867B2;
+      }
+      .icon-git{
+          color:#24292e;
+      }
+  }
 
 }

@@ -1,19 +1,12 @@
 .skills {
   padding-top: 120px;
- // height: 100vh;
-  //border:1px solid orange;
-  // @include for-wide-layout {
-  //   height: 90vh;
-  // }
   @include for-narrow-layout {
-    //padding-top: 0;
     height: auto;
     width: 100%;
   }
 }
 
 .skill-list {
-  //border:1px solid blue;
   width: 100%;
   margin-top: 42px;
   @include for-mobile-layout {
@@ -38,4 +31,11 @@
     height: 15px;
     background-color: #dfdfdf;
   }
+}
+
+.precent-bar{
+  background-color: $clr1;
+  height: 100%;
+  width: 0;
+  transition: 3.6s width;
 }

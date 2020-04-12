@@ -1,0 +1,44 @@
+@keyframes buttonEffect {
+    0% {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes planeEffect {
+    0% {
+        color:red;
+        position: absolute;
+        top: 20px;
+        left: 100px;
+        transform: rotate(0deg);
+    }
+    25% {
+        top: 5px;
+        left: 110px;
+        transform: rotate(-5deg);
+        opacity: 0.8;
+    }
+    50% {
+        top: -10px;
+        left: 120px;
+        transform: rotate(-10deg);
+        opacity: 0.5;
+    }
+    75% {
+        top: -25px;
+        left: 130px;
+        transform: rotate(-15deg);
+        opacity: 0.3;
+    }
+    100% {
+        top: -40px;
+        left: 145px;
+        transform: rotate(-20deg);
+        opacity: 0.8;
+    }
+  
+}

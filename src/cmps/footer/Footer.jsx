@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Elevator from 'elevator.js'
 
 import IconList from './IconList'
 
@@ -23,13 +24,21 @@ export default class Footer extends Component {
             }
         ]
     }
+    move=(link)=>{
+        link = '#' + link
+        let elevator = new Elevator({
+            targetElement: document.querySelector(link),
+        });
+        elevator.elevate()
+    }
     render() {
         return (
             <footer className="footer">
                 <div className="container flex align-center justify-space-between">
                     <IconList icons={this.state.icons} />
-                    <h3>gilad bergmann</h3>
-                    <div className="circule flex align-center justify-center">
+                    <div 
+                    onClick={this.move.bind(null,'home')}
+                    className="circule flex align-center justify-center">
                         <span className="icon-long-arrow-up"></span>
                     </div>
                 </div>

@@ -3,7 +3,6 @@
   background-color: #f1ececdb;
   position: fixed;
   top: 0;
-  left: 0%;
   left: 50%;
   transform: translate(-50%, 0);
   width: 100%;
@@ -19,7 +18,7 @@
     align-items: center;
   }
   .humburger-bar {
-    margin-right: 15px;
+    margin-right: 17.5px;
   }
 }
 .main-navbar {
@@ -43,6 +42,7 @@
       z-index: 101;
       flex-direction: column;
       align-items: center;
+      justify-content: space-between;
       padding-top: 121px;
       position: fixed;
       right: 0;
@@ -57,6 +57,14 @@
     & > * {
       @include for-narrow-layout {
         width: 100%;
+      }
+    }
+    .logo{
+      display: none;
+     margin:30px auto;
+       width: 150px;
+      @include for-narrow-layout {
+        display: block;
       }
     }
     .close-menu {
@@ -93,8 +101,11 @@
   }
 }
 
-.active {
+.active,.navbar-preview:hover {
   border-bottom: 2px solid $clr1;
+  @include for-narrow-layout {
+    border-bottom: none;
+   }
 }
 
 .openMenu {

@@ -36,7 +36,6 @@ export default class Header extends Component {
                         </div>
                     </div>
                     <div className="second ">
-                        {/* <div className="blend-mode"></div> */}
                     </div>
                 </header>
             </Waypoint>

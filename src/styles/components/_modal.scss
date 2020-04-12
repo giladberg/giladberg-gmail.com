@@ -1,0 +1,16 @@
+.modal{
+    position: fixed;
+    top:10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding:10px 80px;
+    border-radius: 5px;
+    color:$clr6;
+    font-size: rem(25px);
+}
+.success{
+    background-color: green;
+}
+.danger{
+    background-color: red;
+}

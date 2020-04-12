@@ -1,10 +1,9 @@
 .portfolio {
   padding-top: 120px;
- // min-height: 100vh;
- // border:1px solid blue;
-  @include for-wide-layout {
-   // min-height: 90vh;
-  }
+  @include for-mobile-layout {
+    padding-top: 0;
+    text-align: center;
+   }
 }
 
 .portfolio-list {
@@ -16,12 +15,15 @@
 }
 
 .portfolioPreview {
+  transition: .5s opacity;
+  opacity: 0;
   cursor: pointer;
-  // outline:5px solid $clr1;
   max-height: 341px;
   .info {
+    transition: .6s visibility;
+    visibility: hidden;
     background-color: black;
-    display: none;
+    display: flex;
     position: absolute;
     top: 0;
     left: 0;
@@ -39,12 +41,7 @@
   }
   &:hover {
     .info {
-      display: flex;
-    }
-
-    img {
-      //   mix-blend-mode: overlay ;
-      //   filter: grayscale(4);
+      visibility: visible;
     }
   }
 }

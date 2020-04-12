@@ -9,9 +9,11 @@ import Portfolio from './cmps/portfolio/Portfolio'
 import Passage from './cmps/Passage'
 import Contact from './cmps/Contact'
 import Footer from './cmps/footer/Footer'
+import Modal from './cmps/Modal'
 function App() {
   return (
     <div  >
+      <Modal/>
       <Header />
       <About />
       <Skils />
